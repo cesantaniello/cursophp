@@ -1,6 +1,6 @@
 <?php
 
-include('jobs.php');
+require_once('jobs.php');
 
 $name = 'Hector Benitez';
 $limitMonths = 2000;
@@ -58,18 +58,26 @@ $limitMonths = 2000;
             $totalMonths = 0;
             for($idx = 0;$idx < count($jobs); $idx++) {
               // $totalMonths = $totalMonths + $jobs[$idx]['months'];
-              $totalMonths += $jobs[$idx] -> months;
+              $totalMonths += $jobs[$idx]->months;
               if($totalMonths > $limitMonths) {
                 break;
               }
 
-              printJob($jobs[$idx]);
+              printElement($jobs[$idx]);
             }
             ?>
           </ul>
         </div>
         <div>
             <h3 class="border-bottom-gray">Projects</h3>
+            <ul>
+            <?php
+            for($idx = 0;$idx < count($projects); $idx++) {
+              printElement($projects[$idx]);
+            }
+            ?>
+          </ul>
+
             <div class="project">
                 <h5>Project X</h5>
                 <div class="row">
