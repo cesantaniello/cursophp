@@ -2,7 +2,7 @@
 
 require_once 'BaseElement.php';
 
-class Job extends BaseElement {
+class Job extends BaseElement implements Printable{
     public function __construct($title, $description) {
         $newTitle = 'Job: ' . $title;
         $this->title = $newTitle;
@@ -14,4 +14,5 @@ class Job extends BaseElement {
       
         return "Job duration: $years years $extraMonths months";
     }
+
 }
