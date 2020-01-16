@@ -1,8 +1,6 @@
 <?php
+namespace App\Models;
 
 interface Printable {
-  public function getDescription(Type $var = null)
-  {
-    # code...
-  }
+    public function getDescription();
 }
