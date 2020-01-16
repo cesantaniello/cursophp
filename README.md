@@ -1,3 +1,1 @@
- #Curso PHP
-
-Curso PHP básico de Platzi
+# curso-introduccion-php

@@ -1,8 +1,8 @@
 <?php
 
-include('jobs.php');
+require_once('jobs.php');
 
-$name = "Hector Benitez";
+$name = 'Hector Benitez';
 $limitMonths = 2000;
 
 ?>
@@ -55,15 +55,15 @@ $limitMonths = 2000;
           <h3 class="border-bottom-gray" >Work Experience</h3>
           <ul>
             <?php
-              $totalMonths = 0;
-              for ($idx = 0; $idx < count($jobs); $idx++){
-                $totalMonths += $jobs[$idx]['months'];
-
-                if($totalMonths > $limitMonths){
+            $totalMonths = 0;
+            for($idx = 0;$idx < count($jobs); $idx++) {
+              // $totalMonths = $totalMonths + $jobs[$idx]['months'];
+              $totalMonths += $jobs[$idx]->months;
+              if($totalMonths > $limitMonths) {
                 break;
-                }
+              }
 
-                printJob($jobs[$idx]);
+              printJob($jobs[$idx]);
             }
             ?>
           </ul>
